@@ -1,0 +1,47 @@
+#Wrapper Scripts to run Orthofinder using Diamond a the search engine
+#The scripts were optimized to be used in the slurm based cluster. 
+#All the scripts assume that OrthoFinder and Diamond are in your path.
+#As well the third script requieres at least perl version 5.18.2.
+#Diamond version utlized diamond v0.8.36.98 
+#Orthofinder version utilized Orthofinder-1.1.4
+1)
+#Given a folder with .faa files whose names is faa_dir. We run the first script of the pipeline
+#This shell script is calling orthofinder and stopping it after preparing the needed input files to run its algorithm.
+
+oh.orthofinderprepare.sh faa_dir
+
+#The above script will create a folder with the name Results_Date, where Date is the Given month and day when the script was called. Inside this folder, there will be another folder named WorkingDirectory. WorkingDirectory folder contains the input .fa files plus some text files needed for Orthofinder to run properly.
+
+2)
+#The second script should be run inside the WorkingDirectory created by the first script.
+#This script creates a diamond ddatabase per each .fa file present in the folder.
+oh.makediamond.sh
+
+3)
+#Because orthofinder needs n^2 blast-like searches to run properly and we have taxons with aroun 600 genomes we implemented  a script that parallelizes the .faa diamond serches in the slurm cluster utlized.
+perl oh.parallelize_diamond_orthofinder.pl
+
+4)
+#This script runs Orthofinder utlizing the diamond searches
+#The directory where the .fa files and the diamond searches should be passed as a parameter
+oh.orthofinderfromblast.sh WorkingDirectory
+
+5)
+#Orthofinder outputs a file named Orthogroups.txt containing the proteins contained in any existen orthogroup. 
+#The next script appends a given prefix to each Orthogroup so we can merge multiple Orthogroup tables afterwards.
+#The script receive as input the given prefix we wanna append to the Orthogorups
+perl oh.add_orthogroups_prefix.pl prefix
+
+6)
+#The final script of this folder create a pangenome matrix from an Orthogroup.txt file output by orthofinder. This is achieved by mapping each given protein to a given genome. 
+#This script outputs two version of the pangenome matrix, one with the raw counts of orthogroups per genome and the other one just the binarize version of the raw matrix.
+#The script takes 3 arguments
+#Folder where the .faa files analyzed are container
+#Orthogroup.txt file that we wanna convert to matrix
+#Prefix to attach to the name of the matrices output 
+perl oh.orthofinder_orthogroups2matrix.pl faa_folder Orthogroup.txt prefix
+
+7)
+#This script creates the dataframes contained in the folder 
+#
+perl oh.create_dataframe_from_orthogroups.pl
