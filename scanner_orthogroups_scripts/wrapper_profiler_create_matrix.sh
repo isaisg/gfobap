@@ -1,4 +1,4 @@
-# (C) Copyright 2016 Isai Salas Gonzalez
+# (C) Copyright 2017 Isai Salas Gonzalez
 #
 #    This file is part of gdobap.
 #

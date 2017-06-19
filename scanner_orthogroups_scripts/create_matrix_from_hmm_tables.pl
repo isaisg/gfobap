@@ -1,4 +1,4 @@
-# (C) Copyright 2016 Isai Salas Gonzalez
+# (C) Copyright 2017 Isai Salas Gonzalez
 # #
 # #    This file is part of gdobap.
 # #
@@ -14,6 +14,7 @@
 # #
 # #    You should have received a copy of the GNU General Public License
 # #    along with gdobap.  If not, see <http://www.gnu.org/licenses/>.
+
 #!/usr/bin/perl
 use strict;
 use warnings;
