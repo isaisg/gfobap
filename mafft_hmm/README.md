@@ -1,7 +1,7 @@
 ### MAFFT alignments and HMM Profiles
 
 The scripts contained in this folder are two perl scripts that parallelize the creation and submmission of jobs in a SLURM based cluster.
-The scripts were tested using perl/5.18.2 , MAFFT v7.305b (2016/Aug/16) and HMMER 3.1b2 (February 2015).
+The scripts were developed and tested using perl/5.18.2 , MAFFT v7.305b (2016/Aug/16) and HMMER 3.1b2 (February 2015).
 
 oh.parallelize_mafft_orthofinder.pl - This Script takes a folder with fasta files corresponding to Orthogroups and creates alignments of each file. This corresponds to an alignment per Orthogroup.
 
