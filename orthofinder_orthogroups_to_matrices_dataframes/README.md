@@ -1,7 +1,6 @@
-### Orthoinder Scripts using Diamond
+### Scripts to convert the Orthogroups file output by Orthofinder into a pangenome matrix and a dataframe.
 
-Wrapper Scripts to run Orthofinder using Diamond a the search engine.These scripts were optimized to be used in the slurm based cluster. 
-The scripts assume that OrthoFinder and Diamond are in your path.
+These scripts were optimized to be used in the slurm based cluster. 
 
 These scripts were developed and tested using perl/5.18.2 , diamond v0.8.36.98 and Orthofinder-1.1.4
 
@@ -18,7 +17,9 @@ oh.orthofinder_orthogroups2matrix.pl - This  script  creates a pangenome matrix 
 The script takes 3 arguments: 
 
 -Folder where the .faa files analyzed are container
+
 -Orthogroup.txt file that we wanna convert to matrix
+
 -Prefix to attach to the name of the matrices output 
 
 perl oh.orthofinder_orthogroups2matrix.pl faa_folder Orthogroup.txt prefix
@@ -29,6 +30,7 @@ perl oh.orthofinder_orthogroups2matrix.pl faa_folder Orthogroup.txt prefix
 oh.create_dataframe_from_orthogroups.pl - This scripts creates a dataframe with three columns (Orthogroup_Id,Genome,Gene_Id). These dataframes can be utlized to find which genes correspond to a given Orthogroups in a particular genome of interest. The script trakes 2 arguments
 
 -Orthogroups.txt file that contains the orthogroups.
+
 -Folder where the .faa files analyzed are container
 
 perl oh.create_dataframe_from_orthogroups.pl Orthogroup.txt faa_folder
