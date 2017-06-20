@@ -1,4 +1,4 @@
-### Scripts to convert the Orthogroups file output by Orthofinder into a pangenome matrix and a dataframe
+### Scripts to convert the Orthogroups file output by Orthofinder into a pangenome matrix, a pangenome dataframe and to create individual fasta files per orthogroup 
 
 These scripts were optimized to be used in the slurm based cluster. 
 
@@ -16,23 +16,32 @@ oh.add_orthogroups_prefix.pl prefix -The script receive as input the given prefi
 oh.orthofinder_orthogroups2matrix.pl - This  script  creates a pangenome matrix from an Orthogroup.txt file output by orthofinder. This is achieved by mapping each given protein to a given genome. The script outputs two version of the pangenome matrix, one with the raw counts of orthogroups per genome and the other one just the binarize version of the raw matrix.
 The script takes 3 arguments: 
 
--Folder where the .faa files analyzed are container
+-Folder where the .faa files analyzed are contained
 
 -Orthogroup.txt file that we wanna convert to matrix
 
 -Prefix to attach to the name of the matrices output 
 
-perl oh.orthofinder_orthogroups2matrix.pl faa_folder Orthogroup.txt prefix
+perl oh.orthofinder_orthogroups2matrix.pl faa_folder Orthogroups.txt prefix
 
 
 ##### 3)
 
-oh.create_dataframe_from_orthogroups.pl - This scripts creates a dataframe with three columns (Orthogroup_Id,Genome,Gene_Id). These dataframes can be utlized to find which genes correspond to a given Orthogroups in a particular genome of interest. The script trakes 2 arguments
+oh.create_dataframe_from_orthogroups.pl - This script creates a dataframe with three columns (Orthogroup_Id,Genome,Gene_Id). These dataframes can be utlized to find which genes correspond to a given Orthogroups in a particular genome of interest. The script trakes 2 arguments
 
 -Orthogroups.txt file that contains the orthogroups.
 
 -Folder where the .faa files analyzed are container
 
-perl oh.create_dataframe_from_orthogroups.pl Orthogroup.txt faa_folder
+perl oh.create_dataframe_from_orthogroups.pl Orthogroups.txt faa_folder
 
+#### 4)
 
+oh.seqs_files_from_orthogroups.pl - This script crates a folder names orthogroups_sequences where it creates one fasta aminoacid file per orthogroup contained in the Orthogroups.txt file output by Orthofinder.
+The script takes 2 arguments:
+
+-Folder where the .faa files analyzed are contained
+
+-Orthogroup.txt file that we wanna convert to matrix
+
+perl oh.seqs_files_from_orthogroups.pl faa_folder Orthogroups.txt
