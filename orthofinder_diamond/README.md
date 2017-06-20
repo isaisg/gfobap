@@ -15,6 +15,7 @@ oh.orthofinderprepare.sh faa_dir - This shell script is calling orthofinder and 
 ##### 2)
 
 The second script should be run inside the WorkingDirectory created by the first script.
+
 oh.makediamond.sh - This script creates a diamond database per each .fa file present in the folder.
 
 ##### 3)
@@ -23,6 +24,12 @@ Because orthofinder needs n^2 blast-like searches to run properly and we have ta
 
 oh.parallelize_diamond_orthofinder.pl - This script should be called inside the WorkingDirectory.
 
+The diamond command contained in the above script and utlized to compute the searches is:
+
+**diamond blastp --threads 4 --db dbfile --outfmt 6 --query queryfile --max-target-seqs 500 --evalue 0.001 --very-sensitive --quiet --out outfile**
+
 ##### 4)
 
 oh.orthofinderfromblast.sh WorkingDirectory - This script runs Orthofinder utlizing the diamond searches. The directory where the .fa files and the diamond searches should be passed as a parameter.
+
+
