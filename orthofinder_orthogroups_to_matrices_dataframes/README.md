@@ -1,4 +1,4 @@
-### Scripts to convert the Orthogroups file output by Orthofinder into a pangenome matrix and a dataframe.
+### Scripts to convert the Orthogroups file output by Orthofinder into a pangenome matrix and a dataframe
 
 These scripts were optimized to be used in the slurm based cluster. 
 

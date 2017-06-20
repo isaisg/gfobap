@@ -53,7 +53,6 @@ tree<-reroot(tree,node.number=root_node)
 #Subset the phylogenetic tree
 subtree<-drop.tip(phy=tree,tip=which(!(tree$tip.label%in%rownames(Tab))))
 
-#Use the same function that sur used
 allgenes_hyp <- function(tree,genes,Map){
   #tree <- Dat$tree
   #Map <- Dat$Map
@@ -194,7 +193,6 @@ tree<-reroot(tree,node.number=root_node)
 subtree<-drop.tip(phy=tree,tip=which(!(tree$tip.label%in%rownames(Tab))))
 
 
-#Use the same function that sur used
 allgenes_hyp <- function(tree,genes,Map){
   #tree <- Dat$tree
   #Map <- Dat$Map

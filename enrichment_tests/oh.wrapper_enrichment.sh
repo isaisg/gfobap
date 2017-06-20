@@ -18,7 +18,8 @@
 #    along with gdobap.  If not, see <http://www.gnu.org/licenses/>.
 
 #This wrapper should be run in the folder where the input matrix is located
-spath=/pine/scr/i/s/isai/3837_march_2017/archive_publication_files/scripts/enrichment_tests;
+#Mofidy the spath  to wherever the enrichment scripts are located
+spath=/home/isai/Documents/results/3837_pa_npa_soil_june_2016_resubmit/github_repo/gdobap/enrichment_tests;
 file=$1;
 #Run the hypergeometric test
 echo "Running hypergeometric";
