@@ -2,7 +2,12 @@
 
 These scripts are the core of the enrichment/depletion calls in the 9 taxons analyzed. 
 
+These scripts were developed/tests using r/3.3.1 , Scoary version 1.6.10 , and python/3.5.1
+The next R packages with their corresponding version are required
 
+phylolm_2.5  , bugwas_0.0.0.9000 , phytools_0.5-64  , maps_3.1.1   ,ape_4.1 
+
+ 
 #### Hypergeometric test
 
 oh.hypergeometric.R - R script that takes as input a pangenome matrix and returns two tables. One of enrichment betweens PA and NPA and the other between RA and Soil genomes. The tables include two versions of the Hypergeometric test, one in which the values in the matrix are binarized and one in which they are not. The script requires the metadata file located in  . It assumes the metadata file is in the . folder.
