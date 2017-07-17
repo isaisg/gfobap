@@ -2,24 +2,24 @@
 
 # (C) Copyright 2017 Isai Salas Gonzalez
 #
-#    This file is part of gdobap.
+#    This file is part of gfobap.
 #
-#    gdobap is free software: you can redistribute it and/or modify
+#    gfobap is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
-#    gdobap is distributed in the hope that it will be useful,
+#    gfobap is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#    along with gdobap.  If not, see <http://www.gnu.org/licenses/>.
+#    along with gfobap.  If not, see <http://www.gnu.org/licenses/>.
 
 #This wrapper should be run in the folder where the input matrix is located
 #Mofidy the spath  to wherever the enrichment scripts are located
-spath=/home/isai/Documents/results/3837_pa_npa_soil_june_2016_resubmit/github_repo/gdobap/enrichment_tests;
+spath=/home/isai/Documents/results/3837_pa_npa_soil_june_2016_resubmit/github_repo/gfobap/enrichment_tests;
 file=$1;
 #Run the hypergeometric test
 echo "Running hypergeometric";
