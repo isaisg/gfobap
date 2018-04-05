@@ -14,7 +14,7 @@ http://labs.bio.unc.edu/Dangl/Resources/gfobap_website/
 
 
     (C) Copyright 2017 Isai Salas Gonzalez
-    This file is gfobap.
+    This file is part of gfobap.
 
     gfobap is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
